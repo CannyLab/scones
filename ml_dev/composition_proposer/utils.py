@@ -125,7 +125,7 @@ class Clipart(object):
         self.pose = self.subtype // NUM_EXPRESSION
         self.expression = self.subtype % NUM_EXPRESSION
         
-    def get_array(self, num_classes):
+    def get_array(self, num_classes=58):
         NUM_IDX = num_classes + 2   
         NUM_CATS = NUM_IDX + NUM_SUBTYPE + NUM_DEPTH + NUM_FLIP
         NUM_NUM = 2
@@ -134,7 +134,6 @@ class Clipart(object):
         output_arr[self.real_start_end_idx] = 1
         output_arr[self.subtype + NUM_IDX] = 1
         output_arr[self.depth + NUM_IDX + NUM_SUBTYPE] = 1
-        output_arr[self.flip + NUM_IDX + NUM_SUBTYPE + NUM_DEPTH] = 1
         output_arr[self.flip + NUM_IDX + NUM_SUBTYPE + NUM_DEPTH] = 1
         output_arr[NUM_CATS] = self.normed_x
         output_arr[NUM_CATS + 1] = self.normed_y

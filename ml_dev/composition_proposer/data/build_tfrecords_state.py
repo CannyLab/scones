@@ -57,10 +57,10 @@ def get_max_len(examples):
     return max_len
 
 
-def caption_to_vecs(sen, max_len, pad=True, emb_size=WORD_EMBED_SIZE):
+def caption_to_vecs(data_dir, sen, max_len, pad=True, emb_size=WORD_EMBED_SIZE):
     global GLOVE_MODEL
     if not GLOVE_MODEL:
-        GLOVE_MODEL = get_glove_model()
+        GLOVE_MODEL = get_glove_model(data_dir)
     tokens = nltk.tokenize.word_tokenize(sen.lower())
     caption = [get_glove(GLOVE_MODEL, token, emb_size) for token in tokens]
     caption_len = len(caption)
@@ -159,7 +159,7 @@ def write_tfrecords(data_dir, examples, tfrecords_format='codraw_{}_combined_sta
     max_len = get_max_len(examples)
     agg = []
     prev_example_id = -1
-    embeds = [caption_to_vecs(e[3], max_len, pad=False) for e in examples]
+    embeds = [caption_to_vecs(data_dir, e[3], max_len, pad=False) for e in examples]
     for idx, e in tqdm(enumerate(examples)):
         seq_t = e[0]
         seq_d = e[1]

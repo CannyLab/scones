@@ -1,5 +1,5 @@
 import numpy as np
-
+import os
 def get_glove(model, word, emb_size=300):
     if word in model:
         model[word] = list(model[word])
