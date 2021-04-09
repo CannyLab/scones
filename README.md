@@ -2,7 +2,15 @@
 ## Composition Proposer
 
 ### Prerequisites
-To train new models and/or run inference on published pre-trained checkpoints, you will need the following prerequisites:
+To train new models and/or run inference on published pre-trained checkpoints for the composition proposer, you will need the following prerequisites:
+- Tensorflow 2.3.1
+- Tensorflow Estimator 2.3.0
+- Huggingface Transformers 3.1.0
+- nltk 3.5
+- tqdm 4.50.2
+- numpy 1.18.5
+- Data and Pre-trained GLoVe embedding listed in the section below
+
 ### Data
 For Training/Eval only: Scones is trained on CoDraw data, which can be downloaded in JSON format from [here](https://drive.google.com/file/d/0B-u9nH58139bTy1XRFdqaVEzUGs/view). Please download the json file and move it into the *data/* folder at the root of the repo
 
@@ -16,7 +24,8 @@ To train the model, simply run
 `python train_state.py`
 
 ### Eval
-To run evaluation on the test set, change the *model_ckpt* variable in *run_eval.py* to the desired checkpoint path. 
+To run evaluation on the test set, change the *model_ckpt* variable in *run_eval.py* to the desired checkpoint path. Then, run:
+`python run_eval.py`
 
 ## Generation
 Coming soon.
