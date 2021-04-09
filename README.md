@@ -1,4 +1,7 @@
 # Source Code for "Scones: Towards Conversational Authoring of Sketches"
+## Paper
+Please find our paper [here](https://dl.acm.org/doi/abs/10.1145/3377325.3377485).
+
 ## Composition Proposer
 
 ### Prerequisites
