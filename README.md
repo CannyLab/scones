@@ -27,8 +27,8 @@ To train the model, simply run
 To run evaluation on the test set, change the *model_ckpt* variable in *run_eval.py* to the desired checkpoint path. Then, run:
 `python run_eval.py`
 
-## Generation
+### Generation
 Coming soon.
 
-# Object Sketchers
+## Object Sketchers
 Coming soon.
